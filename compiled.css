@@ -1,0 +1,13 @@
+.hero.hero-overlay::before {
+    opacity: 0.75;
+}
+#anchor-staff-and-fellows .card-img-top{
+    align-self: flex-end;
+}
+@media all and (min-width: 768px) and (max-width: 991px){
+    #anchor-staff-and-fellows .col-md-4 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+   }
+}
