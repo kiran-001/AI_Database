@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Tools</title>
+    <link rel="stylesheet" href="style.css"> <!-- Your existing stylesheet -->
+    <!-- Add any additional styles or scripts here -->
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <img src="Assets/eu-logo-shield.svg" alt="Center for AI Learning Logo" class="logo-img">
+                <h1 class="nav-title">AI Tools Repository</h1>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Newsletter</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tools Section -->
+        <section class="main-container">
+            <div class="main-content">
+                <!-- Search Bar -->
+                <div class="search">
+                    <input placeholder="Search for tools..." type="text">
+                    <button type="submit">Go</button>
+                </div>
+        
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <label for="price-filter">Price:</label>
+                    <select id="price-filter">
+                        <option value="all">All</option>
+                        <option value="Free">Free</option>
+                        <option value="Freemium">Freemium</option>
+                        <option value="Paid">Paid</option>
+                    </select>
+            
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <!-- Add options dynamically based on available categories -->
+                    </select>
+            
+                    <label for="api-filter">API:</label>
+                    <select id="api-filter">
+                        <option value="all">All</option>
+                        <option value="yes">Yes</option>
+                    </select>
+
+                    <!-- Add the Reset Filters button -->
+                    <button id="resetFiltersBtn">Reset Filters</button>
+                </div>
+            
+                <!-- Tools Section -->
+                <div class="tools-section">
+                    <!-- Tool Tiles Container -->
+                    <div class="tools-tiles"></div>
+                </div>
+                
+                <!-- Pagination Section -->
+                <div class="pagination">
+                    <button id="prevPageBtn" class="pagination-btn" disabled>Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextPageBtn" class="pagination-btn">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="newsletter-signup">
+        <div class="newsletter-image">
+            <img src="Assets/mailbox_re_dvds.svg" alt="Mailbox Image">
+        </div>
+
+        <div class="newsletter-content">
+            <h2>Wanna know what we're up to?</h2>
+            <p>Be the first to know about our latest AI projects, fun events, and learning opportunities. Sign up!</p>
+            <button class="signup-btn" onclick="window.open('http:\/\/39893947.hs-sites.com/center-for-ai-learning-join-the-community', '_blank');">
+                <span>Subscribe</span>
+            </button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="ribbon yellow"></div>
+        <div class="ribbon blue"></div>
+        <div class="footer-logo">
+            <a href="https://www.emory.edu/" target="_blank">
+                <img src="images/eu-logo-footer.svg" alt="Logo">
+            </a>
+        </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo-address">
+                    <img src="https://ailearning.emory.edu/_includes/images/sections/eu_ctrailearning_hz_rv.png" alt="EU Logo">
+                    <address>
+                        Woodruff Library<br>
+                        Suite 217<br>
+                        540 Asbury Circle<br>
+                        Atlanta, GA 30322
+                    </address>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>SCHOOLS</h4>
+                <ul>
+                    <li><a href="#" target="_blank">Emory College</a></li>
+                    <li><a href="#" target="_blank">Oxford College</a></li>
+                    <li><a href="#" target="_blank">Goizueta Business School</a></li>
+                    <li><a href="#" target="_blank">Laney Graduate School</a></li>
+                    <li><a href="#" target="_blank">School of Law</a></li>
+                    <li><a href="#" target="_blank">School of Medicine</a></li>
+                    <li><a href="#" target="_blank">Nell Hodgson Woodruff School of Nursing</a></li>
+                    <li><a href="#" target="_blank">Rollins School of Public Health</a></li>
+                    <li><a href="#" target="_blank">Candler School of Theology</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="#" target="_blank">AI.Humanity</a></li>
+                    <li><a href="#" target="_blank">Office of the Provost</a></li>
+                    <li><a href="#" target="_blank">Human Resources</a></li>
+                    <li><a href="#" target="_blank">Benefits</a></li>
+                    <li><a href="#" target="_blank">Work-Life Resources</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="post-footer">
+            <p>Copyright © <a href="https://www.emory.edu/" target="_blank">Emory University</a></p>
+            <p>
+                <a href="https://equityandcompliance.emory.edu/equity-inclusion/affirmative-action/eoaa-statements.html" target="_blank">
+                    EO/AA Statement</a> | 
+                <a href="https://communications.emory.edu/resources/web-guide/copyright.html" target="_blank">
+                    Copyright</a> | 
+                <a href="https://ethicsandcompliance.emory.edu/privacy/index.html" target="_blank">
+                    Privacy Statement</a>
+            </p>
+            <p><a href="#">Back to top</a></p>
+        </div>
+        
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script/script.js"></script> 
+</body>
+</html>

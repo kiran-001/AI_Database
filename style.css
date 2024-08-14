@@ -892,3 +892,18 @@ ul li a:hover {
     100% { transform: rotate(360deg); }
 }
  */
+
+ .explore-tools-button {
+    background-color: #012169; /* Dark blue background */
+    color: #ffffff; /* White text */
+    padding: 12px 24px; /* Padding for a substantial clickable area */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Ensure it's treated like a button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.explore-tools-button:hover {
+    background-color: #f2a900; /* Change background to accent color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}

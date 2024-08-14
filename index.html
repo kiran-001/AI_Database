@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="navbar.css"> -->
 </head>
@@ -54,7 +54,7 @@
         </div>
     </section>
     
-    <section class="scroller-container">
+    <!-- <section class="scroller-container">
         <h1 style="text-align: center">Browse by Category</h1>
 
         <div class="scroller" data-speed="fast">
@@ -102,138 +102,64 @@
             </ul>
         </div>
 
-    </section>
+    </section> -->
 
-    <section class="main-container">
-        <div class="main-content">
-            <!-- Search Bar -->
-            <div class="search">
-                <input placeholder="Search for tools..." type="text">
-                <button type="submit">Go</button>
-            </div>
+    <section class="scroller-container">
+        <h1 style="text-align: center">Browse by Category</h1>
     
-            <!-- Filter Section -->
-            <div class="filter-section">
-                <label for="price-filter">Price:</label>
-                <select id="price-filter">
-                    <option value="all">All</option>
-                    <option value="Free">Free</option>
-                    <option value="Freemium">Freemium</option>
-                    <option value="Paid">Paid</option>
-                </select>
-        
-                <label for="category-filter">Category:</label>
-                <select id="category-filter">
-                    <option value="all">All Categories</option>
-                    <!-- Add options dynamically based on available categories -->
-                </select>
-        
-                <!-- <label for="tag-filter">Tags:</label>
-                <select id="tag-filter">
-                    <option value="all">All Tags</option>
-                </select> -->
-
-                <label for="api-filter">API:</label>
-                <select id="api-filter">
-                    <option value="all">All</option>
-                    <option value="yes">Yes</option>
-                </select>
-
-                <!-- Add the Reset Filters button -->
-                <button id="resetFiltersBtn">Reset Filters</button>
-            
-            </div>
-        
-            <!-- Tools Section -->
-            <div class="tools-section">
-                <!-- Tool Tiles Container -->
-                <div class="tools-tiles"></div>
-            </div>
-        
-            <!-- Load More Button -->
-            <!-- <div class="load-more-container">
-                <button id="loadMoreBtn">
-                <span class="book-wrapper">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="rgb(86, 69, 117)"
-                    viewBox="0 0 126 75"
-                    class="book"
-                    >
-                    <rect
-                        stroke-width="3"
-                        stroke="#fff"
-                        rx="7.5"
-                        height="70"
-                        width="121"
-                        y="2.5"
-                        x="2.5"
-                    ></rect>
-                    <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
-                    <path
-                        stroke-linecap="round"
-                        stroke-width="4"
-                        stroke="#fff"
-                        d="M25 20H50"
-                    ></path>
-                    <path
-                        stroke-linecap="round"
-                        stroke-width="4"
-                        stroke="#fff"
-                        d="M101 20H76"
-                    ></path>
-                    <path
-                        stroke-linecap="round"
-                        stroke-width="4"
-                        stroke="#fff"
-                        d="M16 30L50 30"
-                    ></path>
-                    <path
-                        stroke-linecap="round"
-                        stroke-width="4"
-                        stroke="#fff"
-                        d="M110 30L76 30"
-                    ></path>
-                    </svg>
+        <div class="scroller" data-speed="fast">
+            <ul class="tag-list scroller__inner">
+                <li><a href="tool-grid.html?category=Productivity">Productivity</a></li>
+                <li><a href="tool-grid.html?category=Generative%20Art">Generative Art</a></li>
+                <li><a href="tool-grid.html?category=Chat">Chat</a></li>
+                <li><a href="tool-grid.html?category=Music">Music</a></li>
+                <li><a href="tool-grid.html?category=Copywriting">Copywriting</a></li>
+                <li><a href="tool-grid.html?category=Image%20Creation">Image Creation</a></li>
+                <li><a href="tool-grid.html?category=Video%20Creation">Video Creation</a></li>
+                <li><a href="tool-grid.html?category=Coding">Coding</a></li>
+                <li><a href="tool-grid.html?category=PDF%20Chat">PDF Chat</a></li>
+                <li><a href="tool-grid.html?category=PPT">PPT</a></li>
+            </ul>
+        </div>
     
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 65 75"
-                    class="book-page"
-                    >
-                    <path
-                        stroke-linecap="round"
-                        stroke-width="4"
-                        stroke="#fff"
-                        d="M40 20H15"
-                    ></path>
-                    <path
-                        stroke-linecap="round"
-                        stroke-width="4"
-                        stroke="#fff"
-                        d="M49 30L15 30"
-                    ></path>
-                    <path
-                        stroke-width="3"
-                        stroke="#fff"
-                        d="M2.5 2.5H55C59.1421 2.5 62.5 5.85786 62.5 10V65C62.5 69.1421 59.1421 72.5 55 72.5H2.5V2.5Z"
-                    ></path>
-                    </svg>
-                </span>
-                <span class="text"> Load more </span>
-                </button>
+        <div class="scroller" data-direction="right" data-speed="fast">
+            <ul class="tag-list scroller__inner">
+                <li><a href="tool-grid.html?category=Data">Data</a></li>
+                <li><a href="tool-grid.html?category=Name%20Creation">Name Creation</a></li>
+                <li><a href="tool-grid.html?category=Career">Career</a></li>
+                <li><a href="tool-grid.html?category=Research">Research</a></li>
+                <li><a href="tool-grid.html?category=AI%20Detection">AI Detection</a></li>
+                <li><a href="tool-grid.html?category=Education">Education</a></li>
+                <li><a href="tool-grid.html?category=Image%20Editing">Image Editing</a></li>
+                <li><a href="tool-grid.html?category=Generative%20Video">Generative Video</a></li>
+                <li><a href="tool-grid.html?category=Advertising">Advertising</a></li>
+                <li><a href="tool-grid.html?category=Automation">Automation</a></li>
+            </ul>
+        </div>
     
-            </div> -->
-            
-            <!-- Pagination Section -->
-            <div class="pagination">
-                <button id="prevPageBtn" class="pagination-btn" disabled>Previous</button>
-                <div id="pageNumbers" class="page-numbers"></div>
-                <button id="nextPageBtn" class="pagination-btn">Next</button>
-            </div>
+        <div class="scroller" data-speed="fast">
+            <ul class="tag-list scroller__inner">
+                <li><a href="tool-grid.html?category=Social%20Media">Social Media</a></li>
+                <li><a href="tool-grid.html?category=Audio">Audio</a></li>
+                <li><a href="tool-grid.html?category=Business%20Intelligence">Business Intelligence</a></li>
+                <li><a href="tool-grid.html?category=Video%20Editing">Video Editing</a></li>
+                <li><a href="tool-grid.html?category=Marketing">Marketing</a></li>
+                <li><a href="tool-grid.html?category=Dating">Dating</a></li>
+                <li><a href="tool-grid.html?category=Recruitment">Recruitment</a></li>
+                <li><a href="tool-grid.html?category=Text-to-Voice">Text-to-Voice</a></li>
+                <li><a href="tool-grid.html?category=Graphic%20Design">Graphic Design</a></li>
+                <li><a href="tool-grid.html?category=Text-to-Video">Text-to-Video</a></li>
+            </ul>
         </div>
     </section>
+    
+
+    <section class="explore-tools-section">
+        <h2>Discover Our Tools</h2>
+        <p>Explore a wide range of tools available to help you achieve your goals.</p>
+        <a href="tool-grid.html" class="explore-tools-button">Explore the Listed Tools</a>
+    </section>
+    
 
     <section class="newsletter-signup">
         <div class="newsletter-image">

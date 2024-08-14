@@ -132,6 +132,14 @@ fetch('final_data.json')
         toolsData = data; // Store data in the global variable
         filteredData = toolsData; // Initialize filtered data
         populateFilters(); // Populate filter options based on data
+        // Check for category query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+        if (categoryParam) {
+            document.getElementById('category-filter').value = categoryParam;
+        }
+
+        applyFilters(); // Apply filters, including any pre-set category
         calculateTotalPages(); // Calculate the total number of pages
         loadTools();  // Initial load of tools
     })
@@ -384,8 +392,3 @@ document.getElementById('category-filter').addEventListener('change', applyFilte
 // document.getElementById('tag-filter').addEventListener('change', applyFilters);
 document.getElementById('api-filter').addEventListener('change', applyFilters);
 
-console.log("Filtered Data on Load:", filteredData);
-// window.addEventListener('load', function () {
-//     const preloader = document.getElementById('preloader');
-//     preloader.style.display = 'none';
-// });
