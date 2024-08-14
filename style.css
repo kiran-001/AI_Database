@@ -453,6 +453,23 @@ ul li a:hover {
     margin-right: 20px;
 }
 
+#resetFiltersBtn {
+    background-color: #f4f4f4; /* Light grey background */
+    color: #012169; /* Dark blue text */
+    border: 1px solid #012169; /* Dark blue border */
+    padding: 8px 16px; /* Padding for comfortable click area */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#resetFiltersBtn:hover {
+    background-color: #012169; /* Dark blue background on hover */
+    color: #ffffff; /* White text on hover */
+    border-color: #f2a900; /* Accent color border on hover */
+}
+
+
 .tools-section {
     margin-bottom: 20px;
 }
@@ -525,7 +542,7 @@ ul li a:hover {
 
 .tool-desc {
     font-size: 14px;
-    text-align: justify;
+    /* text-align: justify; */
     flex-grow: 1;
     color: #101820;
     margin-bottom: 10px;
@@ -627,7 +644,7 @@ ul li a:hover {
     color: rgb(255, 255, 255);
   }
 
-  .pagination {
+.pagination {
     display: flex;
     justify-content: center;
     align-items: center;

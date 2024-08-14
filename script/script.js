@@ -141,6 +141,38 @@ function calculateTotalPages() {
     totalPages = Math.ceil(filteredData.length / itemsPerPage);
 }
 
+// function loadTools() {
+//     const toolsContainer = document.querySelector('.tools-tiles');
+//     toolsContainer.innerHTML = ''; // Clear previous tools
+
+//     const startIndex = (currentPage - 1) * itemsPerPage;
+//     const endIndex = startIndex + itemsPerPage;
+
+//     filteredData.slice(startIndex, endIndex).forEach(tool => {
+//         const toolTile = document.createElement('div');
+//         toolTile.classList.add('tool-tile');
+//         toolTile.innerHTML = `
+//             <img src="${tool["Tile URL"]}" alt="${tool["Tool Name"]}">
+//             <h3 class="tool-title">
+//                 <a href="tool.html?id=${tool.id}">${tool["Tool Name"]}</a>
+//                 <a href="${tool["Tool Directory URL"]}" target=_blank class="link-icon">
+//                     <img src="Assets/icons/external-link.svg" alt="Link Icon" width="30" height="30" class="custom-icon">
+//                 </a>
+//             </h3>
+//             <p class="tool-desc">${tool["What it is?"]}</p>
+//             <div class="tool-tags">
+//                 ${tool.Tags.split(' ').map(tag => `<button class="tag-button">${tag.replace(/#/g, '')}</button>`).join('')}
+//             </div>
+//         `;
+
+//         toolsContainer.appendChild(toolTile);
+//     });
+
+//     updatePaginationControls();
+// }
+
+// Scroll to the top of the tools section
+
 function loadTools() {
     const toolsContainer = document.querySelector('.tools-tiles');
     toolsContainer.innerHTML = ''; // Clear previous tools
@@ -161,19 +193,31 @@ function loadTools() {
             </h3>
             <p class="tool-desc">${tool["What it is?"]}</p>
             <div class="tool-tags">
-                ${tool.Tags.split(' ').map(tag => `<button class="tag-button">${tag.replace(/#/g, '')}</button>`).join('')}
+                ${tool.Tags.split(' ').map(tag => `
+                    <button class="tag-button">${tag.replace(/#/g, '')}</button>
+                `).join('')}
             </div>
         `;
 
         toolsContainer.appendChild(toolTile);
+
+        // Add event listeners for tag buttons
+        const tagButtons = toolTile.querySelectorAll('.tag-button');
+        tagButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tag = button.textContent.trim().toLowerCase();
+                document.querySelector('.search input[type="text"]').value = tag;
+                applyFilters();
+            });
+        });
     });
 
     updatePaginationControls();
 }
 
-// Scroll to the top of the tools section
+
 function scrollToToolsSection() {
-    document.querySelector('.tools-section').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.filter-section').scrollIntoView({ behavior: 'smooth' });
 }
 
 // Event listeners for Previous and Next buttons
@@ -241,10 +285,11 @@ document.getElementById('nextPageBtn').addEventListener('click', () => {
 // Populate filters based on available data
 function populateFilters() {
     const categoryFilter = document.getElementById('category-filter');
-    const tagFilter = document.getElementById('tag-filter');
-    
+    // const tagFilter = document.getElementById('tag-filter');
+    const apiFilter = document.getElementById('api-filter');
+
     const categories = new Set(toolsData.map(tool => tool.Category));
-    const tags = new Set(toolsData.flatMap(tool => tool.Tags.split(' ').map(tag => tag.replace(/#/g, ''))));
+    // const tags = new Set(toolsData.flatMap(tool => tool.Tags.split(' ').map(tag => tag.replace(/#/g, ''))));
 
     categories.forEach(category => {
         const option = document.createElement('option');
@@ -253,38 +298,74 @@ function populateFilters() {
         categoryFilter.appendChild(option);
     });
 
-    tags.forEach(tag => {
-        const option = document.createElement('option');
-        option.value = tag;
-        option.textContent = tag;
-        tagFilter.appendChild(option);
-    });
+    // tags.forEach(tag => {
+    //     const option = document.createElement('option');
+    //     option.value = tag;
+    //     option.textContent = tag;
+    //     tagFilter.appendChild(option);
+    // });
 }
 
 // Apply filters based on selected criteria and search query
+// function applyFilters() {
+//     const priceFilter = document.getElementById('price-filter').value;
+//     const categoryFilter = document.getElementById('category-filter').value;
+//     const tagFilter = document.getElementById('tag-filter').value;
+//     const searchQuery = document.querySelector('.search input[type="text"]').value.toLowerCase();
+
+//     filteredData = toolsData.filter(tool => {
+//         const matchesPrice = priceFilter === 'all' || tool.Price === priceFilter;
+//         const matchesCategory = categoryFilter === 'all' || tool.Category === categoryFilter;
+//         const matchesTag = tagFilter === 'all' || tool.Tags.includes(`#${tagFilter}`);
+//         const matchesSearch = searchQuery === '' || 
+//             tool["Tool Name"].toLowerCase().includes(searchQuery) || 
+//             tool["What it is?"].toLowerCase().includes(searchQuery) || 
+//             tool.Category.toLowerCase().includes(searchQuery) || 
+//             tool.Tags.toLowerCase().includes(searchQuery);
+
+//         return matchesPrice && matchesCategory && matchesTag && matchesSearch;
+//     });
+
+//     currentPage = 1; // Reset to first page after applying filters
+//     calculateTotalPages();
+//     loadTools();
+// }
+
 function applyFilters() {
     const priceFilter = document.getElementById('price-filter').value;
     const categoryFilter = document.getElementById('category-filter').value;
-    const tagFilter = document.getElementById('tag-filter').value;
+    const apiFilter = document.getElementById('api-filter').value;
     const searchQuery = document.querySelector('.search input[type="text"]').value.toLowerCase();
 
     filteredData = toolsData.filter(tool => {
         const matchesPrice = priceFilter === 'all' || tool.Price === priceFilter;
         const matchesCategory = categoryFilter === 'all' || tool.Category === categoryFilter;
-        const matchesTag = tagFilter === 'all' || tool.Tags.includes(`#${tagFilter}`);
+        const matchesAPI = apiFilter === 'all' || (apiFilter === 'yes' && tool.API !== "Not Available");
         const matchesSearch = searchQuery === '' || 
             tool["Tool Name"].toLowerCase().includes(searchQuery) || 
             tool["What it is?"].toLowerCase().includes(searchQuery) || 
             tool.Category.toLowerCase().includes(searchQuery) || 
-            tool.Tags.toLowerCase().includes(searchQuery);
+            tool.Tags.toLowerCase().includes(searchQuery); // Now includes tag search
 
-        return matchesPrice && matchesCategory && matchesTag && matchesSearch;
+        return matchesPrice && matchesCategory && matchesAPI && matchesSearch;
     });
 
     currentPage = 1; // Reset to first page after applying filters
     calculateTotalPages();
     loadTools();
 }
+
+document.getElementById('resetFiltersBtn').addEventListener('click', () => {
+    // Reset all filters to their default values
+    document.getElementById('price-filter').value = 'all';
+    document.getElementById('category-filter').value = 'all';
+    document.getElementById('api-filter').value = 'all';
+    document.querySelector('.search input[type="text"]').value = '';
+
+    // Apply filters and reload tools
+    applyFilters();
+});
+
 
 // Event listener for "Go" button
 document.querySelector('.search button[type="submit"]').addEventListener('click', applyFilters);
@@ -297,7 +378,13 @@ document.querySelector('.search input[type="text"]').addEventListener('keypress'
     }
 });
 
+// Event listeners for filter change
+document.getElementById('price-filter').addEventListener('change', applyFilters);
+document.getElementById('category-filter').addEventListener('change', applyFilters);
+// document.getElementById('tag-filter').addEventListener('change', applyFilters);
+document.getElementById('api-filter').addEventListener('change', applyFilters);
 
+console.log("Filtered Data on Load:", filteredData);
 // window.addEventListener('load', function () {
 //     const preloader = document.getElementById('preloader');
 //     preloader.style.display = 'none';
