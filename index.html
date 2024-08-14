@@ -7,14 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navbar</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="navbar.css"> -->
 </head>
 
 <body>
 
+    <!-- <div id="preloader">
+        <div class="spinner"></div>
+    </div> -->
+
     <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">
-                <img src="images/EU_CtrA.png" alt="Center for AI Learning Logo" class="logo-img">
+                <img src="Assets/eu-logo-shield.svg" alt="Center for AI Learning Logo" class="logo-img">
+                <h1 class="nav-title">AI Tools Repository</h1>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -40,9 +46,196 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to the Center for AI Learning</h1>
+            <h1>Welcome to the AI Tools Repository</h1>
             <p>Empowering the future of AI through education and innovation.</p>
+            <p>A product by the Center for AI Learning.</p>
             <a href="#" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+    
+    <section class="scroller-container">
+        <h1 style="text-align: center">Browse by Category</h1>
+
+        <div class="scroller" data-speed="fast">
+            <ul class="tag-list scroller__inner">
+                <li>Productivity</li>
+                <li>Generative Art</li>
+                <li>Chat</li>
+                <li>Music</li>
+                <li>Copywriting</li>
+                <li>Image Creation</li>
+                <li>Video Creation</li>
+                <li>Coding</li>
+                <li>PDF Chat</li>
+                <li>PPT</li>
+            </ul>
+        </div>
+
+        <div class="scroller" data-direction="right" data-speed="fast">
+            <ul class="tag-list scroller__inner">
+                <li>Data</li>
+                <li>Name Creation</li>
+                <li>Career</li>
+                <li>Research</li>
+                <li>AI Detection</li>
+                <li>Education</li>
+                <li>Image Editing</li>
+                <li>Generative Video</li>
+                <li>Advertising</li>
+                <li>Automation</li>
+            </ul>
+        </div>
+
+        <div class="scroller" data-speed="fast">
+            <ul class="tag-list scroller__inner">
+                <li>Social Media</li>
+                <li>Audio</li>
+                <li>Business Intelligence</li>
+                <li>Video Editing</li>
+                <li>Marketing</li>
+                <li>Dating</li>
+                <li>Recruitment</li>
+                <li>Text-to-Voice</li>
+                <li>Graphic Design</li>
+                <li>Text-to-Video</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="main-container">
+        <div class="main-content">
+            <!-- Search Bar -->
+            <div class="search">
+                <input placeholder="Search for tools..." type="text">
+                <button type="submit">Go</button>
+            </div>
+    
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <label for="price-filter">Price:</label>
+                <select id="price-filter">
+                    <option value="all">All</option>
+                    <option value="Free">Free</option>
+                    <option value="Freemium">Freemium</option>
+                    <option value="Paid">Paid</option>
+                </select>
+        
+                <label for="category-filter">Category:</label>
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <!-- Add options dynamically based on available categories -->
+                </select>
+        
+                <label for="tag-filter">Tags:</label>
+                <select id="tag-filter">
+                    <option value="all">All Tags</option>
+                    <!-- Add options dynamically based on available tags -->
+                </select>
+            </div>
+        
+            <!-- Tools Section -->
+            <div class="tools-section">
+                <!-- Tool Tiles Container -->
+                <div class="tools-tiles"></div>
+            </div>
+        
+            <!-- Load More Button -->
+            <!-- <div class="load-more-container">
+                <button id="loadMoreBtn">
+                <span class="book-wrapper">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="rgb(86, 69, 117)"
+                    viewBox="0 0 126 75"
+                    class="book"
+                    >
+                    <rect
+                        stroke-width="3"
+                        stroke="#fff"
+                        rx="7.5"
+                        height="70"
+                        width="121"
+                        y="2.5"
+                        x="2.5"
+                    ></rect>
+                    <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="#fff"
+                        d="M25 20H50"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="#fff"
+                        d="M101 20H76"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="#fff"
+                        d="M16 30L50 30"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="#fff"
+                        d="M110 30L76 30"
+                    ></path>
+                    </svg>
+    
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 65 75"
+                    class="book-page"
+                    >
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="#fff"
+                        d="M40 20H15"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="#fff"
+                        d="M49 30L15 30"
+                    ></path>
+                    <path
+                        stroke-width="3"
+                        stroke="#fff"
+                        d="M2.5 2.5H55C59.1421 2.5 62.5 5.85786 62.5 10V65C62.5 69.1421 59.1421 72.5 55 72.5H2.5V2.5Z"
+                    ></path>
+                    </svg>
+                </span>
+                <span class="text"> Load more </span>
+                </button>
+    
+            </div> -->
+            
+            <!-- Pagination Section -->
+            <div class="pagination">
+                <button id="prevPageBtn" class="pagination-btn" disabled>Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextPageBtn" class="pagination-btn">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-signup">
+        <div class="newsletter-image">
+            <img src="Assets/mailbox_re_dvds.svg" alt="Mailbox Image">
+        </div>
+
+        <div class="newsletter-content">
+            <h2>Wanna know what we're up to?</h2>
+            <p>Be the first to know about our latest AI projects, fun events, and learning opportunities. Sign up!</p>
+            <button class="signup-btn" onclick="window.open('http:\/\/39893947.hs-sites.com/center-for-ai-learning-join-the-community', '_blank');">
+                <span>Subscribe</span>
+            </button>
         </div>
     </section>
     
@@ -57,7 +250,7 @@
         <div class="footer-container">
             <div class="footer-section">
                 <div class="logo-address">
-                    <img src="images/EU_CtrA.png" alt="EU Logo">
+                    <img src="https://ailearning.emory.edu/_includes/images/sections/eu_ctrailearning_hz_rv.png" alt="EU Logo">
                     <address>
                         Woodruff Library<br>
                         Suite 217<br>
@@ -69,39 +262,46 @@
             <div class="footer-section">
                 <h4>SCHOOLS</h4>
                 <ul>
-                    <li><a href="#">Emory College</a></li>
-                    <li><a href="#">Oxford College</a></li>
-                    <li><a href="#">Goizueta Business School</a></li>
-                    <li><a href="#">Laney Graduate School</a></li>
-                    <li><a href="#">School of Law</a></li>
-                    <li><a href="#">School of Medicine</a></li>
-                    <li><a href="#">Nell Hodgson Woodruff School of Nursing</a></li>
-                    <li><a href="#">Rollins School of Public Health</a></li>
-                    <li><a href="#">Candler School of Theology</a></li>
+                    <li><a href="#" target="_blank">Emory College</a></li>
+                    <li><a href="#" target="_blank">Oxford College</a></li>
+                    <li><a href="#" target="_blank">Goizueta Business School</a></li>
+                    <li><a href="#" target="_blank">Laney Graduate School</a></li>
+                    <li><a href="#" target="_blank">School of Law</a></li>
+                    <li><a href="#" target="_blank">School of Medicine</a></li>
+                    <li><a href="#" target="_blank">Nell Hodgson Woodruff School of Nursing</a></li>
+                    <li><a href="#" target="_blank">Rollins School of Public Health</a></li>
+                    <li><a href="#" target="_blank">Candler School of Theology</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>RESOURCES</h4>
                 <ul>
-                    <li><a href="#">AI.Humanity</a></li>
-                    <li><a href="#">Office of the Provost</a></li>
-                    <li><a href="#">Human Resources</a></li>
-                    <li><a href="#">Benefits</a></li>
-                    <li><a href="#">Work-Life Resources</a></li>
+                    <li><a href="#" target="_blank">AI.Humanity</a></li>
+                    <li><a href="#" target="_blank">Office of the Provost</a></li>
+                    <li><a href="#" target="_blank">Human Resources</a></li>
+                    <li><a href="#" target="_blank">Benefits</a></li>
+                    <li><a href="#" target="_blank">Work-Life Resources</a></li>
                 </ul>
             </div>
         </div>
         <div class="post-footer">
-            <p>Copyright © Emory University</p>
-            <p>EO/AA Statement | Copyright | Privacy Statement</p>
+            <p>Copyright © <a href="https://www.emory.edu/" target="_blank">Emory University</a></p>
+            <p>
+                <a href="https://equityandcompliance.emory.edu/equity-inclusion/affirmative-action/eoaa-statements.html" target="_blank">
+                    EO/AA Statement</a> | 
+                <a href="https://communications.emory.edu/resources/web-guide/copyright.html" target="_blank">
+                    Copyright</a> | 
+                <a href="https://ethicsandcompliance.emory.edu/privacy/index.html" target="_blank">
+                    Privacy Statement</a>
+            </p>
             <p><a href="#">Back to top</a></p>
         </div>
+        
     </footer>
     
-    
-    
+    <script src="script/script.js"></script>
+    <script src="script/scroller.js"></script>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

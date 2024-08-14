@@ -1,0 +1,139 @@
+.tool-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-block-size: 100vh;
+}
+
+/* Header section containing the tool name and button */
+.tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#tool-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.visit-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.visit-button:hover {
+    background-color: #0056b3;
+}
+
+.tool-overview h2{
+    font-size: 16px;
+}
+
+#tool-overview{
+    max-width: 500px;
+    height: auto;
+    padding: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.tool-video {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-video img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-video p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.submit-tool {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    /* margin: 20px 0; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-tool-image img {
+    padding: 40px;
+    max-width: 100%;
+    height: 350px;
+}
+
+.submit-tool-content {
+    max-width: 60%;
+}
+
+.submit-tool-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #012169;
+}
+
+.submit-tool-content p {
+    padding-block: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #012169;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #f2a900;
+}
+
+@media only screen and (max-width: 768px) {
+    .submit-tool {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .submit-tool-content {
+        max-width: 100%;
+    }
+
+    .submit-tool-image {
+        margin-bottom: 20px;
+    }
+}

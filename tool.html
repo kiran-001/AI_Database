@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tool.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <img src="images/EU_CtrA.png" alt="Center for AI Learning Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Newsletter</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tool-container" >
+            <!-- Tool Name and Button -->
+            <div class="tool-header">
+                <h1 id="tool-title"></h1>
+                <a id="tool-url" href="" target="_blank" class="visit-button">
+                    Visit Website</a>
+            </div>
+
+            <div class="tool-content">
+                <div class="tool-overview">
+                    <h2>Overview:</h2>
+                    <p id="tool-overview"></p>
+                </div>
+            </div>
+
+            <div class="tool-video">
+                <iframe id="tool-video" width="560" height="315" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>
+                <img id="fallback-image" src="" alt="Tool Image" style="display: none; width: 100%; max-width: 560px; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <p id="not-available" style="display: none; text-align: center; color: #555; font-size: 1.2rem;">Not Available</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="features-container">
+        <div class="why">
+            <h2>Why use it?</h2>
+            <p id="tool-need"></p>
+        </div>
+
+        <div class="features">
+            <h2>Key features:</h2>
+            <p id="tool-features"></p>
+        </div>
+
+        <div class="user-need">
+            <h2>Value to you:</h2>
+            <p id="tool-users"></p>
+        </div>
+    </section>
+
+    <section class="submit-tool">
+        <div class="submit-tool-content">
+            <h2>Got a tool in mind?</h2>
+            <p>Help us enhance our platform by recommending it.</p>
+            <button class="submit-btn">
+                <span>Submit</span>
+            </button>
+        </div>
+
+        <div class="submit-tool-image">
+            <img src="Assets/fill_form_re_cwyf.svg" alt="Tool Submission Image">
+        </div>
+        
+    </section>
+    
+
+    <footer>
+        <div class="ribbon yellow"></div>
+        <div class="ribbon blue"></div>
+        <div class="footer-logo">
+            <a href="https://www.emory.edu/" target="_blank">
+                <img src="images/eu-logo-footer.svg" alt="Logo">
+            </a>
+        </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo-address">
+                    <img src="https://ailearning.emory.edu/_includes/images/sections/eu_ctrailearning_hz_rv.png" alt="EU Logo">
+                    <address>
+                        Woodruff Library<br>
+                        Suite 217<br>
+                        540 Asbury Circle<br>
+                        Atlanta, GA 30322
+                    </address>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>SCHOOLS</h4>
+                <ul>
+                    <li><a href="#" target="_blank">Emory College</a></li>
+                    <li><a href="#" target="_blank">Oxford College</a></li>
+                    <li><a href="#" target="_blank">Goizueta Business School</a></li>
+                    <li><a href="#" target="_blank">Laney Graduate School</a></li>
+                    <li><a href="#" target="_blank">School of Law</a></li>
+                    <li><a href="#" target="_blank">School of Medicine</a></li>
+                    <li><a href="#" target="_blank">Nell Hodgson Woodruff School of Nursing</a></li>
+                    <li><a href="#" target="_blank">Rollins School of Public Health</a></li>
+                    <li><a href="#" target="_blank">Candler School of Theology</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="#" target="_blank">AI.Humanity</a></li>
+                    <li><a href="#" target="_blank">Office of the Provost</a></li>
+                    <li><a href="#" target="_blank">Human Resources</a></li>
+                    <li><a href="#" target="_blank">Benefits</a></li>
+                    <li><a href="#" target="_blank">Work-Life Resources</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="post-footer">
+            <p>Copyright © <a href="https://www.emory.edu/" target="_blank">Emory University</a></p>
+            <p>
+                <a href="https://equityandcompliance.emory.edu/equity-inclusion/affirmative-action/eoaa-statements.html" target="_blank">
+                    EO/AA Statement</a> | 
+                <a href="https://communications.emory.edu/resources/web-guide/copyright.html" target="_blank">
+                    Copyright</a> | 
+                <a href="https://ethicsandcompliance.emory.edu/privacy/index.html" target="_blank">
+                    Privacy Statement</a>
+            </p>
+            <p><a href="#">Back to top</a></p>
+        </div>
+        
+    </footer>
+
+    <script>scrc="script/script.js"</script>
+    <script src="script/tool.js"></script>
+</body>
+</html>
