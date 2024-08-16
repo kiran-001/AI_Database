@@ -134,16 +134,37 @@ fetch('final_data.json')
         populateFilters(); // Populate filter options based on data
         // Check for category query parameter
         const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
         const categoryParam = urlParams.get('category');
         if (categoryParam) {
             document.getElementById('category-filter').value = categoryParam;
         }
 
-        applyFilters(); // Apply filters, including any pre-set category
+        // If there's a search query, apply it
+        if (searchQuery) {
+            document.querySelector('.search input[type="text"]').value = searchQuery;
+            applySearchFilter(searchQuery);
+        } else {
+            applyFilters(); // Apply filters, including any pre-set category
+        }
+
+        // applyFilters(); // Apply filters, including any pre-set category
         calculateTotalPages(); // Calculate the total number of pages
         loadTools();  // Initial load of tools
     })
     .catch(error => console.error('Error loading tools:', error));
+
+    function applySearchFilter(query) {
+    filteredData = toolsData.filter(tool => 
+        tool["Tool Name"].toLowerCase().includes(query) ||
+        tool.Tags.toLowerCase().includes(query) ||
+        tool["What it is?"].toLowerCase().includes(query)
+    );
+
+    currentPage = 1; // Reset to the first page after applying the search filter
+    calculateTotalPages(); // Recalculate the total number of pages
+    loadTools(); // Load the filtered tools
+}
 
 function calculateTotalPages() {
     totalPages = Math.ceil(filteredData.length / itemsPerPage);
@@ -391,4 +412,21 @@ document.getElementById('price-filter').addEventListener('change', applyFilters)
 document.getElementById('category-filter').addEventListener('change', applyFilters);
 // document.getElementById('tag-filter').addEventListener('change', applyFilters);
 document.getElementById('api-filter').addEventListener('change', applyFilters);
+
+// Function to handle search and redirect to tool-grid.html with the search query
+function handleSearch(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+    const searchInput = document.querySelector('.search input[type="text"]').value.trim().toLowerCase();
+
+    // Check if the user entered a search query
+    if (searchInput) {
+        // Redirect to tool-grid.html with the search query as a URL parameter
+        window.location.href = `tool-grid.html?search=${encodeURIComponent(searchInput)}`;
+    } else {
+        alert('Please enter a search term.'); // Optional: handle empty search queries
+    }
+}
+
+// Attach the search function to the search form's submit event
+document.querySelector('.search-bar').addEventListener('submit', handleSearch);
 
