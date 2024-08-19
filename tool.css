@@ -1,11 +1,10 @@
-.tool-container {
+/* .tool-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     min-block-size: 100vh;
 }
 
-/* Header section containing the tool name and button */
 .tool-header {
     display: flex;
     justify-content: space-between;
@@ -73,6 +72,285 @@
     font-size: 1.2rem;
     color: #555;
 }
+
+.submit-tool {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-tool-image img {
+    padding: 40px;
+    max-width: 100%;
+    height: 350px;
+}
+
+.submit-tool-content {
+    max-width: 60%;
+}
+
+.submit-tool-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #012169;
+}
+
+.submit-tool-content p {
+    padding-block: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #012169;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #f2a900;
+}
+
+@media only screen and (max-width: 768px) {
+    .submit-tool {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .submit-tool-content {
+        max-width: 100%;
+    }
+
+    .submit-tool-image {
+        margin-bottom: 20px;
+    }
+} */
+
+.main{
+    background-color: #f3f3f3;
+}
+
+/* General Container */
+.tool-container {
+    /* width: 100%; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Title */
+.tool-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.tool-header h1 {
+    font-size: 32px;
+    color: #012169;
+    margin-bottom: 0;
+}
+
+.tool-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+/* Overview and Button Container */
+.tool-overview-button {
+    flex: 1;
+    /* margin-right: 20px; */
+}
+
+/* Button */
+.visit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #012169;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.visit-button:hover {
+    background-color: #f2a900;
+    color: black;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.visit-button:active {
+    background-color: #b58500; /* Even darker shade when clicked */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+.visit-button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus ring */
+}
+
+/* Overview Section */
+.tool-overview {
+    /* background-color: #f9f9f9; */
+    padding-block: 20px;
+    /* border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    margin-top: 20px;
+}
+
+/* Overview Title */
+.tool-overview h2 {
+    font-size: 18px;
+    color: #b58500; /* Dark grey text color */
+    margin-bottom: 10px;
+}
+
+/* Overview Text */
+.tool-overview p {
+    font-size: 16px;
+    color: #555; /* Medium grey text color */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Video Tile */
+.tool-video {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tool-video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 325px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-video img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.tool-video p {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+
+/* Features Container */
+.features-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    margin-top: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Common styling for all sections (Why, Features, Value) */
+.features-container div {
+    background-color: #ffffff; /* White background for each section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%; /* Full width of the container */
+    text-align: center;
+}
+
+/* Section Titles */
+.features-container h2 {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007BFF; /* Underline with primary color */
+    padding-bottom: 5px;
+}
+
+/* Section Text */
+.features-container p {
+    font-size: 1rem;
+    color: #555; /* Medium grey for readability */
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: left; /* Left align text within the centered container */
+}
+
+/* Bullet Points for Key Features and Value */
+.features-container .features ul,
+.features-container .user-need ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left; /* Align bullets to the left */
+}
+
+.features-container .features ul li,
+.features-container .user-need ul li {
+    margin-bottom: 10px;
+}
+
+.features-container .features ul li::before,
+.features-container .user-need ul li::before {
+    content: ''; /* Removes the default bullet point */
+    font-weight: bold;
+}
+
+.features-container .features ul li b,
+.features-container .user-need ul li b {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        padding: 20px;
+    }
+    
+    .features-container div {
+        padding: 15px;
+    }
+
+    .features-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .features-container p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
 
 .submit-tool {
     display: flex;

@@ -53,7 +53,7 @@
         for (let i = 0; i < filteredData.length; i++) {
             const tool = filteredData[i];
             const logoLink = document.createElement('a');
-            logoLink.href = tool["Tool Directory URL"];
+            logoLink.href = `tool.html?id=${tool.id}`;
             logoLink.target = "_blank";
 
             const logoImg = document.createElement('img');

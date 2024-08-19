@@ -36,9 +36,9 @@
         </nav>
     </header>
 
-    <main>
+    <!-- <main>
         <div class="tool-container" >
-            <!-- Tool Name and Button -->
+            
             <div class="tool-header">
                 <h1 id="tool-title"></h1>
                 <a id="tool-url" href="" target="_blank" class="visit-button">
@@ -58,7 +58,36 @@
                 <p id="not-available" style="display: none; text-align: center; color: #555; font-size: 1.2rem;">Not Available</p>
             </div>
         </div>
+    </main> -->
+
+    <section class="main">
+        <div class="tool-container">
+            <!-- Tool Name (Title) -->
+            <div class="tool-header">
+                <h1 id="tool-title"></h1>
+            </div>
+    
+            <!-- Button, Overview, and Video -->
+            <div class="tool-content">
+                <div class="tool-overview-button">
+                    <a id="tool-url" href="" target="_blank" class="visit-button">
+                        Visit Website
+                    </a>
+                    <div class="tool-overview">
+                        <h2>Overview:</h2>
+                        <p id="tool-overview"></p>
+                    </div>
+                </div>
+    
+                <div class="tool-video">
+                    <iframe id="tool-video" width="560" height="315" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>
+                    <img id="fallback-image" src="" alt="Tool Image" style="display: none; width: 100%; max-width: 560px; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <p id="not-available" style="display: none; text-align: center; color: #555; font-size: 1.2rem;">Not Available</p>
+                </div>
+            </div>
+        </div>
     </main>
+    
 
     <section class="features-container">
         <div class="why">
