@@ -3,6 +3,34 @@ function getToolIdFromUrl() {
     return params.get('id');
 }
 
+function formatJsonToBullets(jsonData) {
+    const formattedData = {};
+
+    // Iterate over each key in the JSON data
+    for (let key in jsonData) {
+        // Split the content into individual bullet points using period followed by space (". ") as the delimiter
+        const bulletPoints = jsonData[key].split(". ").map(point => point.trim()).filter(point => point !== "");
+
+        // Format each bullet point with bold titles and add them to the formatted data
+        formattedData[key] = bulletPoints.map((point, index) => {
+            // Separate the first sentence (title) from the rest of the text
+            const [title, ...rest] = point.split(": ");
+            let formattedPoint = `<strong>${title}:</strong> ${rest.join(": ")}`;
+
+            // Add a period at the end and a line break, except for the last point
+            if (index < bulletPoints.length - 1) {
+                formattedPoint += '.<br>';
+            } else {
+                formattedPoint += '.';
+            }
+
+            return formattedPoint;
+        }).join("");
+    }
+
+    return formattedData;
+}
+
 function loadToolDetails() {
     const toolId = getToolIdFromUrl();
     fetch('final_data.json')
@@ -31,9 +59,24 @@ function loadToolDetails() {
                     fallbackImageElement.style.display = 'block';
                     // notAvailableElement.style.display = 'block';
                 }
+
+                // Use the formatJsonToBullets function to format the content
+                const formattedData = formatJsonToBullets({
+                    'Various aspects of the tool': tool['Various aspects of the tool'],
+                    'Value to users': tool['Value to users']
+                });
+
+
                 document.getElementById('tool-need').innerText = tool['Why it is needed?'];
-                document.getElementById('tool-features').innerText = tool['Various aspects of the tool'];
-                document.getElementById('tool-users').innerText = tool['Value to users'];
+                document.getElementById('tool-features').innerHTML = formattedData['Various aspects of the tool']
+                    .split('<br>').map((item, index) => `<span>${item.trim()}</span>`).join('<br>');
+                document.getElementById('tool-users').innerHTML = formattedData['Value to users']
+                    .split('<br>').map((item, index) => `<span>${item.trim()}</span>`).join('<br>');
+                
+                // document.getElementById('tool-features').innerText = tool['Various aspects of the tool'];
+                // document.getElementById('tool-users').innerText = tool['Value to users'];
+                // document.getElementById('tool-features').innerHTML = formattedData['Various aspects of the tool'];
+                // document.getElementById('tool-users').innerHTML = formattedData['Value to users'];
                 // document.getElementById('tool-image').src = tool['Logo URL'];
                 // document.getElementById('tool-image').alt = tool['Tool Name'];
                 // document.getElementById('tool-description').innerText = tool.Description;

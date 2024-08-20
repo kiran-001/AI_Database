@@ -216,7 +216,7 @@
 
 /* Overview Title */
 .tool-overview h2 {
-    font-size: 18px;
+    font-size: 20px;
     color: #b58500; /* Dark grey text color */
     margin-bottom: 10px;
 }
@@ -271,7 +271,7 @@
     gap: 30px;
     padding: 40px 20px;
     margin-top: 40px;
-    max-width: 650px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -281,53 +281,56 @@
     background-color: #ffffff; /* White background for each section */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 100%; /* Full width of the container */
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: left;
 }
 
 /* Section Titles */
 .features-container h2 {
-    font-size: 1.75rem;
-    color: #333;
+    font-size: 20px;
+    color: #b58500;
     margin-bottom: 15px;
-    border-bottom: 2px solid #007BFF; /* Underline with primary color */
+    border-bottom: 2px solid #012169;
     padding-bottom: 5px;
 }
 
 /* Section Text */
 .features-container p {
-    font-size: 1rem;
-    color: #555; /* Medium grey for readability */
+    font-size: 16px;
+    color: #555;
     line-height: 1.6;
     margin-bottom: 0;
-    text-align: left; /* Left align text within the centered container */
+    text-align: left;
 }
 
-/* Bullet Points for Key Features and Value */
-.features-container .features ul,
-.features-container .user-need ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    text-align: left; /* Align bullets to the left */
+/* Styling Specific to Key Features and Value to You */
+.features-container .features p,
+.features-container .user-need p {
+    counter-reset: bullet;
+    padding-left: 30px;
+    padding-right: 10px;
+    position: relative;
 }
 
-.features-container .features ul li,
-.features-container .user-need ul li {
-    margin-bottom: 10px;
-}
-
-.features-container .features ul li::before,
-.features-container .user-need ul li::before {
-    content: ''; /* Removes the default bullet point */
-    font-weight: bold;
-}
-
-.features-container .features ul li b,
-.features-container .user-need ul li b {
-    font-weight: bold;
+.features-container .features p strong,
+.features-container .user-need p strong {
     display: inline-block;
-    margin-right: 5px;
+    counter-increment: bullet;
+    font-weight: bold;
+    color: #012169;
+    margin-left: -25px;
+    padding-right: 5px;
+}
+
+.features-container .features p strong::before,
+.features-container .user-need p strong::before {
+    content: counter(bullet) ". ";
+    font-weight: bold;
+    color: #b58500;
+    /* margin-right: 10px; */
+    display: inline-block;
+    width: 25px;
 }
 
 /* Responsive Design */
@@ -348,9 +351,6 @@
         font-size: 0.9rem;
     }
 }
-
-
-
 
 .submit-tool {
     display: flex;
