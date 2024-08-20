@@ -229,6 +229,79 @@
     margin-bottom: 0;
 }
 
+/* API Status Button */
+.api-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #28a745; /* Green background for available API */
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.api-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.api-button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+.api-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+}
+
+/* Disabled API Button */
+.api-button.disabled {
+    background-color: #6c757d; /* Grey background for unavailable API */
+    color: #ffffff;
+    pointer-events: none; /* Disable click */
+    box-shadow: none;
+    transform: none;
+}
+
+/* Pricing Section */
+.tool-pricing {
+    margin-top: 20px;
+}
+
+.tool-pricing p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.tool-pricing strong {
+    color: #012169;
+}
+
+.tool-pricing a {
+    color: #f2a900;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tool-pricing a:hover {
+    color: #b58500;
+    text-decoration: underline;
+}
+
+.tool-pricing a.disabled {
+    color: #6c757d;
+    pointer-events: none; /* Disable click */
+    text-decoration: none;
+}
+
+
 /* Video Tile */
 .tool-video {
     flex: 1;
