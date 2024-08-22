@@ -77,6 +77,13 @@
                 <div class="tools-section">
                     <!-- Tool Tiles Container -->
                     <div class="tools-tiles"></div>
+
+                    <!-- No Results Found Message -->
+                    <div id="no-results" style="display: none; text-align: center; padding: 20px;">
+                        <img src="Assets/no_data_re_kwbl.svg" alt="No Results Found" width="150" height="150">
+                        <p>No results found for "<span id="search-query"></span>".</p>
+                    </div>
+                    
                 </div>
                 
                 <!-- Pagination Section -->
@@ -164,6 +171,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
     <script src="script/script.js"></script> 
 </body>
 </html>

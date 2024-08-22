@@ -122,6 +122,7 @@ function closeMenu() {
 // Variables for loading tool tiles in chunks
 let toolsData = [];
 let filteredData = [];
+let fuse; // Initialize Fuse.js object
 let currentPage = 1;
 const itemsPerPage = 12;
 let totalPages = 0;
@@ -131,6 +132,15 @@ fetch('final_data.json')
     .then(data => {
         toolsData = data; // Store data in the global variable
         filteredData = toolsData; // Initialize filtered data
+
+        // Initialize Fuse.js
+        const options = {
+            includeScore: true, // Optional: include score in the results for debugging
+            threshold: 0.3, // Adjust for fuzziness (0 = exact match, 1 = match anything)
+            keys: ['Tool Name', 'Tags', 'What it is?'] // Fields to search in
+        };
+        fuse = new Fuse(toolsData, options);
+
         populateFilters(); // Populate filter options based on data
         // Check for category query parameter
         const urlParams = new URLSearchParams(window.location.search);
@@ -154,12 +164,17 @@ fetch('final_data.json')
     })
     .catch(error => console.error('Error loading tools:', error));
 
-    function applySearchFilter(query) {
-    filteredData = toolsData.filter(tool => 
-        tool["Tool Name"].toLowerCase().includes(query) ||
-        tool.Tags.toLowerCase().includes(query) ||
-        tool["What it is?"].toLowerCase().includes(query)
-    );
+function applySearchFilter(query) {
+    // filteredData = toolsData.filter(tool => 
+    //     tool["Tool Name"].toLowerCase().includes(query) ||
+    //     tool.Tags.toLowerCase().includes(query) ||
+    //     tool["What it is?"].toLowerCase().includes(query)
+    // );
+
+    const normalizedQuery = query.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''); // Normalize the query
+    const results = fuse.search(normalizedQuery); // Use Fuse.js for searching
+
+    filteredData = results.map(result => result.item); // Extract matched items from Fuse.js results
 
     currentPage = 1; // Reset to the first page after applying the search filter
     calculateTotalPages(); // Recalculate the total number of pages
@@ -206,6 +221,17 @@ function loadTools() {
     const toolsContainer = document.querySelector('.tools-tiles');
     toolsContainer.innerHTML = ''; // Clear previous tools
 
+    if (filteredData.length === 0) {
+        // No results found
+        document.getElementById('no-results').style.display = 'block';
+        document.getElementById('search-query').innerText = document.querySelector('.search input[type="text"]').value;
+        document.getElementById('prevPageBtn').disabled = true;
+        document.getElementById('nextPageBtn').disabled = true;
+    } else {
+        // Hide no results message if there are results
+        document.getElementById('no-results').style.display = 'none';
+
+
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
@@ -243,6 +269,7 @@ function loadTools() {
 
     updatePaginationControls();
 }
+}
 
 
 function scrollToToolsSection() {
@@ -272,6 +299,18 @@ function updatePaginationControls() {
     const nextBtn = document.getElementById('nextPageBtn');
     const pageNumbers = document.getElementById('pageNumbers');
     pageNumbers.innerHTML = '';
+
+    if (filteredData.length === 0) {
+        // Disable pagination and show only "Page 1"
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+
+        const pageNumberBtn = document.createElement('button');
+        pageNumberBtn.textContent = "1";
+        pageNumberBtn.classList.add('pagination-btn', 'active'); // Mark as active
+        pageNumbers.appendChild(pageNumberBtn);
+        return;
+    }
 
     for (let i = 1; i <= totalPages; i++) {
         const pageNumberBtn = document.createElement('button');
@@ -370,14 +409,23 @@ function applyFilters() {
         const matchesPrice = priceFilter === 'all' || tool.Price === priceFilter;
         const matchesCategory = categoryFilter === 'all' || tool.Category === categoryFilter;
         const matchesAPI = apiFilter === 'all' || (apiFilter === 'yes' && tool.API !== "Not Available");
-        const matchesSearch = searchQuery === '' || 
-            tool["Tool Name"].toLowerCase().includes(searchQuery) || 
-            tool["What it is?"].toLowerCase().includes(searchQuery) || 
-            tool.Category.toLowerCase().includes(searchQuery) || 
-            tool.Tags.toLowerCase().includes(searchQuery); // Now includes tag search
 
-        return matchesPrice && matchesCategory && matchesAPI && matchesSearch;
+        return matchesPrice && matchesCategory && matchesAPI;
     });
+
+    // If there's a search query, apply Fuse.js search on the filtered data
+    if (searchQuery) {
+        const results = fuse.search(searchQuery);
+        filteredData = results.map(result => result.item);
+    }
+    //     const matchesSearch = searchQuery === '' || 
+    //         tool["Tool Name"].toLowerCase().includes(searchQuery) || 
+    //         tool["What it is?"].toLowerCase().includes(searchQuery) || 
+    //         tool.Category.toLowerCase().includes(searchQuery) || 
+    //         tool.Tags.toLowerCase().includes(searchQuery); // Now includes tag search
+
+    //     return matchesPrice && matchesCategory && matchesAPI && matchesSearch;
+    // });
 
     currentPage = 1; // Reset to first page after applying filters
     calculateTotalPages();
