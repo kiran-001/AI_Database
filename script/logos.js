@@ -39,7 +39,7 @@
     fetch('final_data.json')
         .then(response => response.json())
         .then(data => {
-            filteredData = data.slice(0, 15); // Limit to 15 logos for 3 rows
+            filteredData = data.slice(0, 30); // Limit to 15 logos for 3 rows
             loadLogos(); // Load logos initially
         })
         .catch(error => console.error('Error loading tools:', error));
@@ -61,9 +61,9 @@
             logoImg.alt = tool["Tool Name"];
             logoLink.appendChild(logoImg);
 
-            if (i < 5) {
+            if (i < 10) {
                 row1.appendChild(logoLink);
-            } else if (i < 10) {
+            } else if (i < 20) {
                 row2.appendChild(logoLink);
             } else {
                 row3.appendChild(logoLink);

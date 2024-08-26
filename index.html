@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="navbar.css"> -->
 </head>
 
 <body>
@@ -19,7 +18,7 @@
     <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">
-                <img src="Assets/eu-logo-shield.svg" alt="Center for AI Learning Logo" class="logo-img">
+                <img src="Assets/logo_v1.svg" alt="Center for AI Learning Logo" class="logo-img">
                 <h1 class="nav-title">AI Tools Repository</h1>
             </a>
             <ul class="nav-menu">
@@ -46,12 +45,20 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Discover the AI Tools Repository</h1>
-            <h2>One stop for all your AI needs!</h2>
-            <p>Empowering the future of AI through education and innovation.</p>
-            <p>Used by the Emory Students1.</p>
-            <a href="#" class="cta-btn">Learn More</a>
+            <h1>AI Tools Repository</h1>
+            <h2>Explore, Innovate, and Elevate with AI Tools!</h2>
+            <!-- <p>Empowering the future of AI through education and innovation.</p>
+            <p>Used by the Emory Students1.</p> -->
+            <!-- <a href="#" class="cta-btn">Learn More</a> -->
         </div>
+
+        <!-- Floating Icons -->
+        <img src="Assets/data_re_80ws.svg" alt="AI Icon" class="floating-icon icon-1">
+        <img src="Assets/code_thinking_re_gka2.svg" alt="Brain Icon" class="floating-icon icon-2">
+        <img src="Assets/developer_activity_re_39tg.svg" alt="Gear Icon" class="floating-icon icon-3">
+        <!-- <img src="Assets/process_re_gws7.svg" alt="Gear Icon" class="floating-icon icon-4"> -->
+        <img src="Assets/uploading_re_okvh.svg" alt="Gear Icon" class="floating-icon icon-5">
+        
     </section>
 
     <!-- <section class="featured-tools-slider">
@@ -63,31 +70,56 @@
         </div>
     </section> -->
     
-
     <div class="tools-library">
+        <div class="tools-library-container">
+            <h1>The Library of AI Tools</h1>
+            <p>Transform Ideas into Reality with AI Tools!</p>
+            
+            <!-- <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for tools, tags..." oninput="filterTools()">
+                <button type="submit"><img src="Assets/icons/external-link.svg" alt="Search"></button>
+            </div> -->
+            <div class="tl-search">
+                <form class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for tools, tags...">
+                    <button type="submit"><img src="Assets/icons/search.svg" alt="Search"></button>
+                </form>
+            </div>
+            <!-- <form class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for tools, tags...">
+                <button type="submit"><img src="Assets/icons/search.svg" alt="Search"></button>
+            </form> -->
+    
+            <!-- <div class="logo-grid" id="logoGrid"></div> -->
+            <!-- <div class="logo-container">
+                <div class="logo-flex" id="logoGrid"></div>
+            </div> -->
+            <div class="logo-container">
+                <div class="logo-flex-row" id="row1"></div> <!-- First Row -->
+                <div class="logo-flex-row staggered" id="row2"></div> <!-- Second Row with staggered effect -->
+                <div class="logo-flex-row" id="row3"></div> <!-- Third Row -->
+            </div>
+            <a href="tool-grid.html" class="explore-tools-button">Browse all</a>
+        </div>
+    </div>
+    <!-- <div class="tools-library-container">
         <h1>The Library of AI Tools</h1>
-        <p>Use powerful tools for your projects.</p>
+        <p>Transform Ideas into Reality with AI Tools!</p>
         
-        <!-- <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search for tools, tags..." oninput="filterTools()">
-            <button type="submit"><img src="Assets/icons/external-link.svg" alt="Search"></button>
-        </div> -->
+        
         <form class="search-bar">
             <input type="text" id="searchInput" placeholder="Search for tools, tags...">
             <button type="submit"><img src="Assets/icons/search.svg" alt="Search"></button>
         </form>
 
-        <!-- <div class="logo-grid" id="logoGrid"></div> -->
-        <!-- <div class="logo-container">
-            <div class="logo-flex" id="logoGrid"></div>
-        </div> -->
+        
         <div class="logo-container">
-            <div class="logo-flex-row" id="row1"></div> <!-- First Row -->
-            <div class="logo-flex-row staggered" id="row2"></div> <!-- Second Row with staggered effect -->
-            <div class="logo-flex-row" id="row3"></div> <!-- Third Row -->
+            <div class="logo-flex-row" id="row1"></div> 
+            <div class="logo-flex-row staggered" id="row2"></div> 
+            <div class="logo-flex-row" id="row3"></div> 
         </div>
         <a href="tool-grid.html" class="explore-tools-button">Browse all Tools</a>
-    </div>
+    </div> -->
 
     <!-- <section class="scroller-container">
         <h1 style="text-align: center">Browse by Category</h1>
@@ -233,25 +265,25 @@
             <div class="footer-section">
                 <h4>SCHOOLS</h4>
                 <ul>
-                    <li><a href="#" target="_blank">Emory College</a></li>
-                    <li><a href="#" target="_blank">Oxford College</a></li>
-                    <li><a href="#" target="_blank">Goizueta Business School</a></li>
-                    <li><a href="#" target="_blank">Laney Graduate School</a></li>
-                    <li><a href="#" target="_blank">School of Law</a></li>
-                    <li><a href="#" target="_blank">School of Medicine</a></li>
-                    <li><a href="#" target="_blank">Nell Hodgson Woodruff School of Nursing</a></li>
-                    <li><a href="#" target="_blank">Rollins School of Public Health</a></li>
-                    <li><a href="#" target="_blank">Candler School of Theology</a></li>
+                    <li><a href="http://college.emory.edu/main/index.html" target="_blank">Emory College</a></li>
+                    <li><a href="https://oxford.emory.edu/" target="_blank">Oxford College</a></li>
+                    <li><a href="https://goizueta.emory.edu/" target="_blank">Goizueta Business School</a></li>
+                    <li><a href="https://gs.emory.edu/" target="_blank">Laney Graduate School</a></li>
+                    <li><a href="http://law.emory.edu/" target="_blank">School of Law</a></li>
+                    <li><a href="https://med.emory.edu/" target="_blank">School of Medicine</a></li>
+                    <li><a href="https://www.nursing.emory.edu/" target="_blank">Nell Hodgson Woodruff School of Nursing</a></li>
+                    <li><a href="https://sph.emory.edu/" target="_blank">Rollins School of Public Health</a></li>
+                    <li><a href="https://candler.emory.edu/index.html" target="_blank">Candler School of Theology</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>RESOURCES</h4>
                 <ul>
-                    <li><a href="#" target="_blank">AI.Humanity</a></li>
-                    <li><a href="#" target="_blank">Office of the Provost</a></li>
-                    <li><a href="#" target="_blank">Human Resources</a></li>
-                    <li><a href="#" target="_blank">Benefits</a></li>
-                    <li><a href="#" target="_blank">Work-Life Resources</a></li>
+                    <li><a href="https://aihumanity.emory.edu/" target="_blank">AI.Humanity</a></li>
+                    <li><a href="https://provost.emory.edu/" target="_blank">Office of the Provost</a></li>
+                    <li><a href="https://hr.emory.edu/eu/index.html" target="_blank">Human Resources</a></li>
+                    <li><a href="https://www.hr.emory.edu/eu/benefits/index.html" target="_blank">Benefits</a></li>
+                    <li><a href="https://hr.emory.edu/eu/work-life/index.html" target="_blank">Work-Life Resources</a></li>
                 </ul>
             </div>
         </div>
@@ -273,7 +305,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
     <script src="script/script.js"></script>
     <script src="script/scroller.js"></script>
-    <script src="script/image-slider.js"></script>
+    <!-- <script src="script/image-slider.js"></script> -->
     <script src="script/logos.js"></script>
 
 
