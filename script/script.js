@@ -127,20 +127,6 @@ let currentPage = 1;
 const itemsPerPage = 12;
 let totalPages = 0;
 
-function showLoader() {
-    document.getElementById('loader').style.display = 'block';
-}
-
-function hideLoader() {
-    // Add a delay before hiding the loader
-    setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-    }, 5000);
-}
-
-// Before loading the tools, show the loader
-showLoader();
-
 fetch('final_data.json')
     .then(response => response.json())
     .then(data => {
@@ -175,11 +161,9 @@ fetch('final_data.json')
         // applyFilters(); // Apply filters, including any pre-set category
         calculateTotalPages(); // Calculate the total number of pages
         loadTools();  // Initial load of tools
-        hideLoader(); // Hide the loader once tools are loaded
     })
     .catch(error => {
         console.error('Error loading tools:', error);
-        hideLoader();
     });
 
 function applySearchFilter(query) {
