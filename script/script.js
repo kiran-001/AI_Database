@@ -275,7 +275,7 @@ function loadTools() {
 
 
 function scrollToToolsSection() {
-    document.querySelector('.filter-section').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.search').scrollIntoView({ behavior: 'smooth' });
 }
 
 // Event listeners for Previous and Next buttons
@@ -342,6 +342,7 @@ document.getElementById('prevPageBtn').addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
         loadTools();
+        scrollToToolsSection();
     }
 });
 
@@ -349,6 +350,7 @@ document.getElementById('nextPageBtn').addEventListener('click', () => {
     if (currentPage < totalPages) {
         currentPage++;
         loadTools();
+        scrollToToolsSection();
     }
 });
 
